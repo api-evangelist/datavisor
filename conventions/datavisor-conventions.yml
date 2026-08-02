@@ -1,0 +1,111 @@
+generated: '2026-08-01'
+method: searched
+source: DataVisor public integration guides and API references page
+docs: https://www.datavisor.com/datavisor-api-guide
+note: >-
+  Cross-cutting request/response semantics for the DataVisor API surface, captured only
+  from what DataVisor publishes anonymously. There is no public OpenAPI to derive from and
+  the detailed API guide is gated, so the pagination, error-envelope, rate-limit-signalling
+  and idempotency sections below are recorded as "not published" rather than guessed. No
+  Idempotency pointer is emitted in apis.yml because DataVisor documents no idempotency
+  contract publicly.
+architecture:
+  style: REST over HTTPS
+  transport: HTTPS, TLS v1.2 minimum
+  default_mode: real-time synchronous
+  alternate_modes:
+  - mode: asynchronous real-time
+    mechanism: queue-based
+    availability: on request, arranged through the technical account manager
+  - mode: batch
+    mechanism: batch integration pipe / cloud bucket push
+  evidence:
+    url: https://www.datavisor.com/datavisor-api-guide
+    quote: >-
+      "The default integration mechanism for all APIs supports real-time, synchronous
+      HTTPS-based RESTful calls (secured with TLS v1.2). Please consult your technical
+      account manager (TAM) for a customized integration plan if you prefer implementing
+      queue-based asynchronous real-time integration."
+modularity:
+  note: >-
+    The API set a customer calls is determined by the DataVisor solution modules they
+    subscribe to, not by a single fixed catalog.
+  evidence:
+    url: https://www.datavisor.com/datavisor-api-guide
+    quote: >-
+      "For real-time integration, choose the APIs based on the specific DataVisor solution
+      modules that you subscribe to. Depending on how you plan to utilize our solution, one
+      or more of the APIs will be used in the integration."
+result_delivery:
+  channels:
+  - api-response
+  - cloud-bucket-push
+  payload_concepts:
+  - detection results
+  - risk scores
+  - reason codes
+  - device IDs
+  - risk signals
+  evidence:
+    url: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+    quote: >-
+      "DataVisor's fraud detection engine generates results via API or cloud bucket push
+      that your systems can use to initiate auto-actions or improve downstream systems
+      operations."
+authentication:
+  summary: Access keys plus IP allowlisting; device-scoped tokens for dEdge queries.
+  artifact: authentication/datavisor-authentication.yml
+data_handling:
+  pii_collection: false
+  pii_evidence:
+    url: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+    quote: >-
+      "we do not collect PII data. With the power of proprietary unsupervised machine
+      learning, DataVisor is able to deliver high coverage and accuracy by processing
+      non-PII data only."
+  data_residency:
+    supported: true
+    note: EU deployment available so European user data is processed within Europe.
+    evidence: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+  formats:
+  - structured
+  - unstructured
+deployment:
+  clouds:
+  - AWS
+  - GCP
+  - Azure
+  - AliCloud
+  on_premises: true
+  private_cloud: true
+  isolation: dedicated cloud machines per client
+  evidence: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+onboarding:
+  typical_integration_time: under two weeks
+  steps:
+  - step: 1
+    name: Integrate data
+    detail: Share sample data for a quality check, then stream data to DataVisor's integration endpoint.
+  - step: 2
+    name: Implement detection system
+    detail: Review DataVisor's detection results and reason codes and wire existing systems to parse and act on them.
+  - step: 3
+    name: Start using results
+    detail: Define auto-action criteria from detection results and train analysts on the case management console.
+  evidence: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+not_published:
+  idempotency: >-
+    No idempotency key, header or retry-safety contract is documented on any public
+    DataVisor page.
+  pagination: No pagination style, parameters or response envelope published.
+  error_envelope: No error envelope, error code registry or problem-details format published.
+  rate_limit_signalling: No rate-limit headers, quotas or throttling policy published.
+  versioning: No API versioning scheme, version header or version path published.
+  request_tracing: No request-id / correlation-id header published.
+  webhooks: >-
+    No webhook catalog published. Asynchronous delivery exists but is described as
+    queue-based or cloud-bucket push arranged per customer, not as a public webhook surface.
+related:
+  authentication: authentication/datavisor-authentication.yml
+  conformance: conformance/datavisor-conformance.yml
+  security: security/datavisor-domain-security.yml

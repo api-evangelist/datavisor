@@ -1,0 +1,47 @@
+generated: '2026-08-01'
+method: searched
+source: npm, PyPI, GitHub, and the DataVisor public integration guides
+note: >-
+  No first-party DataVisor client library is distributed through any public package
+  registry. DataVisor does ship a real client SDK — the dEdge device intelligence SDK for
+  iOS, Android and HTML5 web — but it is delivered to contracted customers rather than
+  published, so it cannot be catalogued as an installable package. No SDKs pointer is
+  emitted in apis.yml because no publicly obtainable SDK was found.
+packages: []
+registry_probes:
+- registry: npm
+  query: datavisor
+  result: no first-party package
+- registry: pypi
+  name: datavisor
+  status: 200
+  result: not first-party
+  detail: >-
+    pypi.org/project/datavisor is "a tool for producing binary aggregated data packs for
+    machine learning trainings" by an unrelated individual author (UYousafzai), pointing at
+    github.com/UYousafzai/datavisor. Not DataVisor, Inc.
+- registry: github
+  org: datavisor
+  result: not usable
+  detail: >-
+    github.com/datavisor exists but has a single unrelated repository ("merkle", Makefile,
+    last updated 2017), no description, no website and no link back to datavisor.com. No
+    GitHubOrganization pointer is emitted because the association could not be verified.
+undistributed_sdks:
+- name: dEdge SDK
+  platforms:
+  - iOS
+  - Android
+  - Web (HTML5)
+  distribution: customer-delivered, not published to a public registry
+  description: >-
+    Embedded in a host app or web page, collects device data, encrypts it to the dEdge
+    server and returns a device token used to query the dEdge WebAPI for device IDs, risk
+    scores and risk signals.
+  docs: https://www.datavisor.com/integrations/datavisor-integration-guide-for-device-intelligence
+marketplace_listings:
+- name: DataVisor Enterprise ML Pro for Fraud and AML (dCube)
+  marketplace: Microsoft Azure Marketplace
+  url: https://azuremarketplace.microsoft.com/en/marketplace/apps/datavisor.datavisor_dcube
+  publisher: datavisor
+  note: A deployable offer, not a client library.

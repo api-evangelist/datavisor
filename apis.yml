@@ -1,18 +1,85 @@
 aid: datavisor
 name: DataVisor
-description: 'DataVisor is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'DataVisor is a Mountain View, California fraud and risk platform company
+  founded in 2013 that applies unsupervised machine learning, rules, device intelligence
+  and link analysis to detect fraud and financial crime in real time for banks, credit
+  unions, fintechs, digital payments, life insurance and digital enterprises. The
+  platform covers ACH and wire fraud, account onboarding, application fraud, account
+  takeover, card fraud, check fraud, FinCrime/AML and promotion abuse, and is delivered
+  as an API-integrated detection engine: customers stream events to a DataVisor integration
+  endpoint over real-time synchronous HTTPS REST (TLS 1.2) or batch/cloud-bucket pipes,
+  and consume detection results, scores and reason codes back through APIs or bucket
+  push. Named product modules include the Fraud and Risk Platform, the dEdge device
+  intelligence SDK and WebAPI, dOps fraud and risk operations, dVecto managed ML detection,
+  the UML Modeling Studio and the Vera conversational AI agent. API references and
+  the integration guide are published publicly, but the API guide itself, the detailed
+  endpoint documentation and the admin console are gated behind customer accounts
+  and technical account managers.'
+image: https://cdn.prod.website-files.com/6761698ddf0927f45e0c6407/69a89878e0d86861b9163582_DataVisor-OG.png
 url: https://raw.githubusercontent.com/api-evangelist/datavisor/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-01'
 modified: '2026-08-01'
 tags:
 - Company
-apis: []
+- Fraud Detection
+- Fraud Prevention
+- Anti-Money Laundering
+- Financial Crime
+- Risk Management
+- Machine Learning
+- Artificial Intelligence
+- Device Intelligence
+- Banking
+- Payments
+- Compliance
+apis:
+- aid: datavisor:fraud-and-risk-platform
+  name: DataVisor Fraud and Risk Platform API
+  description: 'Real-time fraud and risk detection API surface. Customers stream user
+    events and transactions to a DataVisor integration endpoint and receive detection
+    results, risk scores and reason codes back. The default integration mechanism for
+    all DataVisor APIs is real-time, synchronous, HTTPS-based RESTful calls secured
+    with TLS v1.2; queue-based asynchronous real-time integration and batch/cloud-bucket
+    push are available on request. Which APIs are used depends on the solution modules
+    a customer subscribes to.'
+  humanURL: https://www.datavisor.com/datavisor-api-guide
+  x-base-url-note: 'No public production base URL is published. DataVisor deploys the
+    detection system to dedicated per-customer cloud machines (AWS, GCP, Azure, AliCloud,
+    on-premises or private cloud), so the integration endpoint is customer-specific
+    and issued by the technical account manager. No baseURL is recorded here rather
+    than inventing one.'
+  tags:
+  - Fraud Detection
+  - Risk Management
+  - Machine Learning
+  properties:
+  - type: Documentation
+    url: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+  - type: APIReference
+    url: https://www.datavisor.com/datavisor-api-guide
+- aid: datavisor:dedge-device-intelligence
+  name: DataVisor dEdge Device Intelligence WebAPI
+  description: 'Device intelligence surface. The dEdge SDK is embedded in an iOS app,
+    Android app or HTML5 web page, sends encrypted device data to the dEdge server,
+    and receives a device token. That token is then used to query the dEdge server
+    WebAPI for device-specific information such as device IDs, risk scores and other
+    risk signals, which can also be fed automatically into DataVisor''s machine learning
+    and rules engines.'
+  humanURL: https://www.datavisor.com/integrations/datavisor-integration-guide-for-device-intelligence
+  x-base-url-note: 'The dEdge server host is not published publicly; access is issued
+    per customer with access keys and IP allowlisting. No baseURL is recorded rather
+    than inventing one.'
+  tags:
+  - Device Intelligence
+  - Fraud Detection
+  properties:
+  - type: Documentation
+    url: https://www.datavisor.com/integrations/datavisor-integration-guide-for-device-intelligence
+  - type: Product
+    url: https://www.datavisor.com/products/datavisor-device-intelligence
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +87,43 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/datavisor_stock/
+  url: https://www.datavisor.com/
+- type: Documentation
+  url: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
+- type: APIReference
+  url: https://www.datavisor.com/datavisor-api-guide
+- type: Support
+  url: https://datavisor.zendesk.com/hc/en-us
+- type: Blog
+  url: https://www.datavisor.com/blog
+- type: About
+  url: https://www.datavisor.com/about
+- type: Careers
+  url: https://apply.workable.com/datavisor-jobs/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/datavisor/
+- type: Partners
+  url: https://www.datavisor.com/partners
+- type: Marketplace
+  url: https://azuremarketplace.microsoft.com/en/marketplace/apps/datavisor.datavisor_dcube
+- type: TermsOfService
+  url: https://www.datavisor.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.datavisor.com/privacy-policy
+- type: Compliance
+  url: conformance/datavisor-conformance.yml
+- type: Authentication
+  url: authentication/datavisor-authentication.yml
+- type: Conventions
+  url: conventions/datavisor-conventions.yml
+- type: Conformance
+  url: conformance/datavisor-conformance.yml
+- type: DomainSecurity
+  url: security/datavisor-domain-security.yml
+- type: LLMsTxt
+  url: llms/datavisor-llms.txt
+x-enrichment:
+  date: '2026-08-01'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

@@ -1,0 +1,85 @@
+generated: '2026-08-01'
+method: probed
+source: live probes of DataVisor hosts
+note: >-
+  Probed the standard /.well-known/ discovery surface across every reachable DataVisor
+  host. Nothing returned 200. www.datavisor.com is a Webflow marketing site that answers
+  every /.well-known/* path with a 404 HTML body reading "Invalid .well-known request".
+  admin.datavisor.com (the customer console, which docs.datavisor.com 307-redirects to)
+  is behind a WAF that answers 403 to every anonymous request, including the root, so
+  those 403s are a blanket denial rather than a per-path result. datavisor.zendesk.com
+  (the support portal) returns 404 for every path. No WellKnown, SecurityTxt, AgentCard
+  or APICatalog pointer is emitted because nothing was found.
+hosts:
+- host: https://www.datavisor.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://admin.datavisor.com
+  note: WAF returns 403 to all anonymous requests including "/"
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/oauth-protected-resource, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /.well-known/ai-plugin.json, status: 403}
+  - {path: /.well-known/agent-card.json, status: 403}
+  - {path: /.well-known/agent.json, status: 403}
+- host: https://datavisor.zendesk.com
+  note: support portal (support.datavisor.com 301-redirects here)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+x-contract-discovery:
+  note: >-
+    Full STEP 0b contract-discovery sweep run before recording "no machine-readable
+    contract". No OpenAPI, Swagger, GraphQL, AsyncAPI, MCP or A2A surface is published
+    anonymously.
+  probes:
+  - {url: 'https://www.datavisor.com/llms.txt', status: 404}
+  - {url: 'https://www.datavisor.com/robots.txt', status: 200, note: 'sitemap only, no API paths'}
+  - {url: 'https://admin.datavisor.com/openapi.json', status: 403}
+  - {url: 'https://admin.datavisor.com/swagger.json', status: 403}
+  - {url: 'https://admin.datavisor.com/api-docs', status: 403}
+  - {url: 'https://admin.datavisor.com/v3/api-docs', status: 403}
+  - {url: 'https://docs.datavisor.com/openapi.json', status: 307, note: 'redirects to admin.datavisor.com/v3'}
+  - {url: 'https://api.datavisor.com/', status: null, note: 'DNS resolves but connection times out'}
+  dns_misses:
+  - developer.datavisor.com
+  - developers.datavisor.com
+  - status.datavisor.com
+  - trust.datavisor.com
+  - app.datavisor.com
+  - console.datavisor.com
+  - portal.datavisor.com
+  - dedge.datavisor.com
+  - dcube.datavisor.com
+  - gateway.datavisor.com
+  - openapi.datavisor.com
+  gated_documentation:
+  - url: https://datavisor.zendesk.com/hc/en-us/articles/10612022171543-Datavisor-API-Integration-Guide-January-2023
+    status: 401
+    note: >-
+      "Datavisor API Integration Guide - January 2023" exists in the DataVisor Zendesk
+      help center and is indexed by search engines, but the Help Center API returns 401
+      for it and the HTML returns 403 to anonymous clients. Only three articles in that
+      help center are public, all of them non-technical FAQ entries.
+  - url: https://www.datavisor.com/datavisor-api-guide
+    status: 200
+    note: >-
+      Public landing page for "DataVisor API References". Describes the integration model
+      but gates the actual API guide behind a "Download the API Guide" form and directs
+      readers to their technical account manager for endpoint detail.
