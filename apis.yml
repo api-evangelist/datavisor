@@ -19,7 +19,7 @@ image: https://cdn.prod.website-files.com/6761698ddf0927f45e0c6407/69a89878e0d86
 url: https://raw.githubusercontent.com/api-evangelist/datavisor/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-01'
 modified: '2026-08-01'
 tags:
