@@ -29,6 +29,19 @@ tags:
 - Anti-Money Laundering
 - Financial Crime
 - Risk Management
+- Machine-Learning
+- Artificial Intelligence
+- Device Intelligence
+- Banking
+- Payments
+- Compliance
+tags_raw:
+- Company
+- Fraud Detection
+- Fraud Prevention
+- Anti-Money Laundering
+- Financial Crime
+- Risk Management
 - Machine Learning
 - Artificial Intelligence
 - Device Intelligence
@@ -52,6 +65,10 @@ apis:
     and issued by the technical account manager. No baseURL is recorded here rather
     than inventing one.'
   tags:
+  - Fraud Detection
+  - Risk Management
+  - Machine-Learning
+  tags_raw:
   - Fraud Detection
   - Risk Management
   - Machine Learning
