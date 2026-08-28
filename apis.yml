@@ -15,6 +15,17 @@ description: 'DataVisor is a Mountain View, California fraud and risk platform c
   the integration guide are published publicly, but the API guide itself, the detailed
   endpoint documentation and the admin console are gated behind customer accounts
   and technical account managers.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/6761698ddf0927f45e0c6407/69a89878e0d86861b9163582_DataVisor-OG.png
 url: https://raw.githubusercontent.com/api-evangelist/datavisor/refs/heads/main/apis.yml
 x-type: company
