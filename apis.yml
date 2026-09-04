@@ -26,6 +26,19 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://cdn.prod.website-files.com/6761698ddf0927f45e0c6407/69a89878e0d86861b9163582_DataVisor-OG.png
 url: https://raw.githubusercontent.com/api-evangelist/datavisor/refs/heads/main/apis.yml
 x-type: company
