@@ -1,0 +1,32 @@
+# Front Door AI Index — datavisor — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: datavisor
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.datavisor.com
+  final_host: www.datavisor.com
+  ownership: own
+  owner: datavisor
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 26
+  host_score: 26
+  density: 26.67
+  words: 975
+  tiers:
+    agentic: 8
+    core: 18
+    model: 0
+  ambiguous: 10
+  top_terms:
+    AI: 15
+    intelligence: 6
+    conversational AI: 5
+    machine learning: 3
+    AI agent: 2
+    agent: 2
+    automation: 2
+    agentic: 1
