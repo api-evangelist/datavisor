@@ -48,12 +48,11 @@ created: '2026-08-01'
 modified: '2026-08-01'
 tags:
 - Company
-- Fraud Detection
 - Fraud Prevention
-- Anti-Money Laundering
+- AML
 - Financial Crime
 - Risk Management
-- Machine-Learning
+- Machine Learning
 - Artificial Intelligence
 - Device Intelligence
 - Banking
@@ -72,6 +71,7 @@ tags_raw:
 - Banking
 - Payments
 - Compliance
+- Machine-Learning
 apis:
 - aid: datavisor:fraud-and-risk-platform
   name: DataVisor Fraud and Risk Platform API
@@ -89,13 +89,14 @@ apis:
     and issued by the technical account manager. No baseURL is recorded here rather
     than inventing one.'
   tags:
-  - Fraud Detection
+  - Fraud Prevention
   - Risk Management
-  - Machine-Learning
+  - Machine Learning
   tags_raw:
   - Fraud Detection
   - Risk Management
   - Machine Learning
+  - Machine-Learning
   properties:
   - type: Documentation
     url: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
@@ -114,6 +115,9 @@ apis:
     per customer with access keys and IP allowlisting. No baseURL is recorded rather
     than inventing one.'
   tags:
+  - Device Intelligence
+  - Fraud Prevention
+  tags_raw:
   - Device Intelligence
   - Fraud Detection
   properties:
