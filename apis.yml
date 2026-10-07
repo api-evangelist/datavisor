@@ -131,6 +131,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Pricing
+  url: https://www.datavisor.com/intelligence-center/ebooks/fraud-prevention-pricing-infographic
+- type: Plans
+  url: plans/datavisor-plans-pricing.yml
 - type: Website
   url: https://www.datavisor.com/
 - type: Documentation
