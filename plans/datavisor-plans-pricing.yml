@@ -1,0 +1,23 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.datavisor.com/intelligence-center/ebooks/fraud-prevention-pricing-infographic
+sources:
+- https://www.datavisor.com/intelligence-center/ebooks/fraud-prevention-pricing-infographic
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T122525
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: unclear
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric price is published on the pricing page; Gated ebook/infographic landing page describing
+  general fraud-prevention pricing models (flat rate, pay as you go, tiered, per user, per feature); no
+  numeric prices for DataVisor's own products are shown. Download requires form submission; page directs
+  to 'Contact Sales'.
+plan_count: 0
+plans: []
