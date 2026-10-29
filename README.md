@@ -64,14 +64,98 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-DataVisor is a Mountain View, California fraud and risk platform company founded in 2013 that applies unsupervised machine learning, rules, device intelligence and link analysis to detect fraud and financial crime in real time for banks, credit unions, fintechs, digital payments, life insurance and digital enterprises.
+DataVisor is a Mountain View, California fraud and risk platform company founded in 2013 that applies unsupervised machine learning, rules, device intelligence and link analysis to detect fraud and financial crime in real time for banks, credit unions, fintechs, digital payments, life insurance and digital enterprises. The platform covers ACH and wire fraud, account onboarding, application fraud, account takeover, card fraud, check fraud, FinCrime/AML and promotion abuse, and is delivered as an API-integrated detection engine: customers stream events to a DataVisor integration endpoint over real-time synchronous HTTPS REST (TLS 1.2) or batch/cloud-bucket pipes, and consume detection results, scores and reason codes back through APIs or bucket push. Named product modules include the Fraud and Risk Platform, the dEdge device intelligence SDK and WebAPI, dOps fraud and risk operations, dVecto managed ML detection, the UML Modeling Studio and the Vera conversational AI agent. API references and the integration guide are published publicly, but the API guide itself, the detailed endpoint documentation and the admin console are gated behind customer accounts and technical account managers.
 
-The detection engine is consumed through APIs: customers stream user events to a DataVisor integration endpoint over real-time synchronous HTTPS REST (TLS 1.2 minimum), or through batch and cloud-bucket pipes, and receive detection results, risk scores and reason codes back. Named modules include the Fraud and Risk Platform, the dEdge device intelligence SDK and WebAPI, dOps, dVecto, the UML Modeling Studio and the Vera conversational AI agent.
+**Areas:** Company · Fraud Prevention · AML · Financial Crime · Risk Management · Machine Learning · Artificial Intelligence · Device Intelligence · Banking · Payments · Compliance
 
-**API documentation is not public.** The API references landing page is public, but the API guide is behind a download form, endpoint detail is held by each customer's technical account manager, and the console at `admin.datavisor.com` refuses anonymous requests. A full contract-discovery sweep found no OpenAPI, Swagger, GraphQL, AsyncAPI, MCP or A2A surface on any DataVisor host — the probe record is in `well-known/datavisor-well-known.yml`. Deployments are per customer on dedicated cloud machines, so there is no single public base URL and none is asserted.
+## DataVisor on APIs.io
 
-- Website: https://www.datavisor.com/
-- API references: https://www.datavisor.com/datavisor-api-guide
-- Integration guide: https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution
-- Support: https://datavisor.zendesk.com/hc/en-us
-- Secondary-market listing (harvest source): https://forgeglobal.com/datavisor_stock/
+Everything profiled for DataVisor is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/datavisor/](https://apis.io/providers/datavisor/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [DataVisor Fraud and Risk Platform API](https://apis.io/apis/datavisor/fraud-and-risk-platform/) — Real-time fraud and risk detection API surface. Customers stream user events and transactions to a DataVisor integration endpoint and receive detection…
+- [DataVisor dEdge Device Intelligence WebAPI](https://apis.io/apis/datavisor/dedge-device-intelligence/) — Device intelligence surface. The dEdge SDK is embedded in an iOS app, Android app or HTML5 web page, sends encrypted device data to the dEdge server, and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Datavisor Authentication](https://apis.io/security/datavisor/datavisor-authentication/)
+- [Datavisor Domain Security](https://apis.io/security/datavisor/datavisor-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Datavisor Plans Pricing](https://apis.io/plans/datavisor/datavisor-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.datavisor.com/)
+- [Documentation](https://www.datavisor.com/integrations/datavisor-integration-guide-for-comprehensive-fraud-solution)
+- [API reference](https://www.datavisor.com/datavisor-api-guide)
+- [Pricing](https://www.datavisor.com/intelligence-center/ebooks/fraud-prevention-pricing-infographic)
+- [Support](https://datavisor.zendesk.com/hc/en-us)
+- [Blog](https://www.datavisor.com/blog)
+- [Terms of service](https://www.datavisor.com/terms-of-service)
+- [Privacy policy](https://www.datavisor.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 23.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 39.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.2** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/datavisor/](https://apis.io/providers/datavisor/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for DataVisor: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/datavisor/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
